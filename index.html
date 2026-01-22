@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Luxury Store | Live Draw & Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Outfit:wght@900&display=swap');
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: radial-gradient(circle at top, #1a1c23, #0a0a0c); 
+            color: white; 
+            scroll-behavior: smooth;
+            min-height: 100vh;
+        }
+
+        .gold-text { 
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+
+        .draw-glow { 
+            box-shadow: 0 0 60px rgba(191, 149, 63, 0.1); 
+            border: 1px solid rgba(191, 149, 63, 0.2); 
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .product-card { 
+            background: rgba(255,255,255,0.02); 
+            border: 1px solid rgba(255,255,255,0.05); 
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+
+        .product-card:hover { 
+            border-color: #bf953f; 
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.05);
+        }
+
+        input { 
+            background: rgba(255,255,255,0.03) !important; 
+            border: 1px solid rgba(255,255,255,0.1) !important; 
+            color: white !important; 
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: #bf953f !important;
+            outline: none;
+            background: rgba(255,255,255,0.07) !important;
+        }
+
+        .btn-gold {
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728);
+            color: black;
+            font-weight: 900;
+            transition: 0.3s;
+        }
+
+        .btn-gold:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(191, 149, 63, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <section class="w-full py-16 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block px-6 py-1 rounded-full border border-[#bf953f]/30 mb-8 bg-[#bf953f]/5">
+                <span class="text-[10px] font-black tracking-[0.5em] gold-text uppercase animate-pulse">Official Live Draw Terminal</span>
+            </div>
+            
+            <div class="draw-glow rounded-[4rem] py-20 px-6 relative overflow-hidden">
+                <div class="absolute -top-24 -left-24 w-64 h-64 bg-blue-600/10 blur-[100px]"></div>
+                
+                <h2 id="drawID" class="text-7xl md:text-9xl font-black tracking-tighter mb-6 italic text-white/10 uppercase">
+                    #READY
+                </h2>
+                
+                <p id="drawStatus" class="text-2xl md:text-3xl font-bold gold-text tracking-[0.3em] uppercase italic">
+                    NEXT DRAW: 01 MARCH 2026
+                </p>
+
+                <div class="mt-8 flex justify-center items-center gap-3 text-[10px] text-gray-500 font-bold uppercase tracking-widest">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
+                    Entries are currently open
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-16 border-b border-white/5 pb-10 gap-6">
+            <div class="text-center md:text-left">
+                <h3 class="text-4xl font-extrabold gold-text uppercase tracking-tighter">Premium Collection</h3>
+                <p class="text-gray-500 mt-2 font-medium tracking-wide">Every purchase includes 1 Free Entry to the draw above.</p>
+            </div>
+            <div class="bg-white/5 px-8 py-4 rounded-3xl border border-white/5">
+                <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-1">Cart Status</span>
+                <span id="cartDisplay" class="text-2xl font-black italic">Rs. 0</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-24">
+            <div class="product-card p-10 rounded-[3rem] text-center group">
+                <div class="h-48 flex items-center justify-center text-8xl mb-6 group-hover:scale-110 transition duration-500 filter drop-shadow-2xl">??</div>
+                <h4 class="text-xl font-bold mb-2">Airpods Pro Gold</h4>
+                <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-6 font-bold">Spatial Audio Edition</p>
+                <p class="text-3xl font-black mb-8 gold-text">Rs. 3,500</p>
+                <button onclick="openCheckout('Airpods Pro Gold', 3500)" class="w-full bg-white text-black py-4 rounded-2xl font-black uppercase tracking-[0.2em] text-xs hover:bg-[#bf953f] transition-all">Buy Now</button>
+            </div>
+
+            <div class="product-card p-10 rounded-[3rem] text-center group">
+                <div class="h-48 flex items-center justify-center text-8xl mb-6 group-hover:scale-110 transition duration-500 filter drop-shadow-2xl">?</div>
+                <h4 class="text-xl font-bold mb-2">Royal Oud XL</h4>
+                <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-6 font-bold">Premium Fragrance</p>
+                <p class="text-3xl font-black mb-8 gold-text">Rs. 2,800</p>
+                <button onclick="openCheckout('Royal Oud XL', 2800)" class="w-full bg-white text-black py-4 rounded-2xl font-black uppercase tracking-[0.2em] text-xs hover:bg-[#bf953f] transition-all">Buy Now</button>
+            </div>
+
+            <div class="product-card p-10 rounded-[3rem] text-center group">
+                <div class="h-48 flex items-center justify-center text-8xl mb-6 group-hover:scale-110 transition duration-500 filter drop-shadow-2xl">??</div>
+                <h4 class="text-xl font-bold mb-2">Carbon Case</h4>
+                <p class="text-gray-500 text-[10px] uppercase tracking-widest mb-6 font-bold">Ultra-Slim Protection</p>
+                <p class="text-3xl font-black mb-8 gold-text">Rs. 1,500</p>
+                <button onclick="openCheckout('Carbon Case', 1500)" class="w-full bg-white text-black py-4 rounded-2xl font-black uppercase tracking-[0.2em] text-xs hover:bg-[#bf953f] transition-all">Buy Now</button>
+            </div>
+        </div>
+
+        <div id="checkoutArea" class="hidden max-w-3xl mx-auto bg-black/40 p-12 rounded-[4rem] border border-[#bf953f]/20 backdrop-blur-xl">
+            <header class="text-center mb-10">
+                <h3 class="text-3xl font-bold gold-text italic mb-2">Secure Procurement</h3>
+                <p class="text-gray-500 text-xs uppercase tracking-widest font-bold">Enter your details to finalize the order</p>
+            </header>
+            
+            <div class="mb-10 p-6 bg-white/5 rounded-3xl flex justify-between items-center border border-white/5">
+                <div>
+                    <span class="text-[10px] text-gray-500 uppercase font-black block">Selected Item</span>
+                    <span id="pName" class="font-bold text-lg">---</span>
+                </div>
+                <div class="text-right">
+                    <span class="text-[10px] text-gray-500 uppercase font-black block">Price</span>
+                    <span id="pPrice" class="text-[#bf953f] font-black text-2xl tracking-tighter">Rs. 0</span>
+                </div>
+            </div>
+
+            <form onsubmit="handlePayment(event)" class="space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input type="text" placeholder="Full Name" required class="p-5 rounded-2xl text-sm">
+                    <input type="email" placeholder="Email Address" required class="p-5 rounded-2xl text-sm">
+                </div>
+                
+                <div class="p-8 bg-black/40 rounded-[2rem] border border-white/5 space-y-6">
+                    <p class="text-[9px] font-black tracking-[0.4em] uppercase text-gray-500 text-center mb-4">Debit / Credit Card Terminal</p>
+                    <input type="number" placeholder="Card Number (0000 0000 0000 0000)" required class="w-full p-4 rounded-xl text-center text-lg tracking-[0.3em]">
+                    <div class="grid grid-cols-2 gap-6">
+                        <input type="text" placeholder="MM / YY" required class="p-4 rounded-xl text-center">
+                        <input type="number" placeholder="CVV" required class="p-4 rounded-xl text-center">
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full py-6 btn-gold rounded-[2rem] text-sm uppercase tracking-[0.4em]">
+                    Authorize & Confirm Order
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="py-20 text-center border-t border-white/5 mt-20">
+        <p class="text-[9px] text-gray-600 font-bold tracking-[0.5em] uppercase italic">&copy; 2026 Elite Trade & Co. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Update Cart Total & Display Checkout
+        function openCheckout(name, price) {
+            const area = document.getElementById('checkoutArea');
+            area.classList.remove('hidden');
+            
+            document.getElementById('pName').innerText = name;
+            document.getElementById('pPrice').innerText = "Rs. " + price.toLocaleString();
+            document.getElementById('cartDisplay').innerText = "Rs. " + price.toLocaleString();
+            
+            // Smooth Scroll
+            area.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Mock Payment Success
+        function handlePayment(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            btn.innerText = "PROCESSING...";
+            btn.disabled = true;
+
+            setTimeout(() => {
+                confetti({
+                    particleCount: 150,
+                    spread: 70,
+                    origin: { y: 0.6 },
+                    colors: ['#bf953f', '#ffffff', '#22c55e']
+                });
+                alert("PAYMENT SUCCESSFUL!\nYour order has been placed and 1 Ticket has been added to your account for the next draw.");
+                window.location.reload();
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
