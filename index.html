@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Luxury Store | Live Draw</title>
+    <title>Elite Luxury Store | Official Terminal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <style>
@@ -11,80 +11,84 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0a0a0c; color: white; }
         .gold-text { background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(191, 149, 63, 0.2); backdrop-filter: blur(10px); }
-        .product-img { transition: transform 0.5s ease; width: 100%; height: 250px; object-fit: contain; }
-        .product-card:hover .product-img { transform: scale(1.1); }
+        .product-img { transition: transform 0.5s ease; width: 100%; height: 250px; object-fit: contain; border-radius: 1.5rem; }
+        .product-card:hover .product-img { transform: scale(1.05); }
     </style>
 </head>
 <body class="antialiased">
 
     <section class="py-16 px-6 text-center">
         <div class="max-w-4xl mx-auto glass-card rounded-[3rem] p-12 relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-right from-transparent via-[#bf953f] to-transparent"></div>
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#bf953f] to-transparent"></div>
             <h1 class="text-7xl md:text-8xl font-black opacity-10 absolute inset-0 flex items-center justify-center select-none">#READY</h1>
-            <p class="text-xs font-bold tracking-[0.5em] gold-text mb-4 uppercase">Official Live Draw Terminal</p>
+            <p class="text-[10px] font-bold tracking-[0.5em] gold-text mb-4 uppercase text-center">Official Live Draw Terminal</p>
             <h2 class="text-3xl md:text-5xl font-extrabold italic mb-6 uppercase tracking-tighter">Next Draw: 01 March 2026</h2>
             <div class="flex justify-center items-center gap-2 text-[10px] text-green-500 font-bold uppercase tracking-widest">
-                <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span> Live Entries Open
+                <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span> Entries are currently open
             </div>
         </div>
     </section>
 
     <main class="max-w-7xl mx-auto px-6 py-12">
-        <div class="flex justify-between items-end mb-12">
+        <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-12 gap-6 text-center md:text-left">
             <div>
                 <h3 class="text-4xl font-bold gold-text uppercase italic">Premium Collection</h3>
-                <p class="text-gray-500 text-sm mt-1">Get a free ticket with every purchase.</p>
+                <p class="text-gray-500 text-sm mt-1">Every purchase includes 1 Free Entry to the draw above.</p>
             </div>
-            <div class="glass-card px-6 py-3 rounded-2xl text-right">
-                <p class="text-[10px] text-gray-500 font-bold uppercase">Cart Total</p>
-                <span id="cartTotal" class="text-xl font-black">Rs. 0</span>
+            <div class="glass-card px-8 py-4 rounded-2xl">
+                <p class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Cart Status</p>
+                <span id="cartTotal" class="text-2xl font-black italic">Rs. 0</span>
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             <div class="product-card glass-card p-8 rounded-[2.5rem] flex flex-col items-center text-center">
-                <img src="https://images.unsplash.com/photo-1588423771073-b8903fbb85b5?auto=format&fit=crop&w=500&q=80" alt="Perfume" class="product-img mb-6 rounded-2xl">
+                <img src="https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=500&q=80" alt="Royal Oud XL" class="product-img mb-6">
                 <h4 class="text-xl font-bold mb-1">Royal Oud XL</h4>
-                <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Elite Fragrance</p>
-                <p class="text-2xl font-black gold-text mb-6">Rs. 2,800</p>
-                <button onclick="openCheckout('Royal Oud XL', 2800)" class="w-full py-4 bg-white text-black rounded-xl font-black text-xs uppercase tracking-widest hover:bg-[#bf953f] transition-all">Buy Now</button>
+                <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4 font-bold">Premium Fragrance</p>
+                <p class="text-2xl font-black gold-text mb-6 italic">Rs. 2,800</p>
+                <button onclick="openCheckout('Royal Oud XL', 2800)" class="w-full py-4 bg-white text-black rounded-xl font-black text-xs uppercase tracking-widest hover:bg-[#bf953f] hover:text-white transition-all">Buy Now</button>
             </div>
 
-            <div class="product-card glass-card p-8 rounded-[2.5rem] flex flex-col items-center text-center">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80" alt="Headphones" class="product-img mb-6 rounded-2xl">
+            <div class="product-card glass-card p-8 rounded-[2.5rem] flex flex-col items-center text-center border-t-2 border-[#bf953f]">
+                <img src="https://images.unsplash.com/photo-1588423771073-b8903fbb85b5?auto=format&fit=crop&w=500&q=80" alt="Airpods Pro Gold" class="product-img mb-6">
                 <h4 class="text-xl font-bold mb-1">Airpods Pro Gold</h4>
-                <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Spatial Audio</p>
-                <p class="text-2xl font-black gold-text mb-6">Rs. 3,500</p>
-                <button onclick="openCheckout('Airpods Pro Gold', 3500)" class="w-full py-4 bg-white text-black rounded-xl font-black text-xs uppercase tracking-widest hover:bg-[#bf953f] transition-all">Buy Now</button>
+                <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4 font-bold">Spatial Audio Edition</p>
+                <p class="text-2xl font-black gold-text mb-6 italic">Rs. 3,500</p>
+                <button onclick="openCheckout('Airpods Pro Gold', 3500)" class="w-full py-4 bg-white text-black rounded-xl font-black text-xs uppercase tracking-widest hover:bg-[#bf953f] hover:text-white transition-all">Buy Now</button>
             </div>
 
             <div class="product-card glass-card p-8 rounded-[2.5rem] flex flex-col items-center text-center">
-                <img src="https://images.unsplash.com/photo-1586953101559-4adcb8c7ec98?auto=format&fit=crop&w=500&q=80" alt="Case" class="product-img mb-6 rounded-2xl">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80" alt="Carbon Case" class="product-img mb-6">
                 <h4 class="text-xl font-bold mb-1">Carbon Shield</h4>
-                <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4">Ultra Protection</p>
-                <p class="text-2xl font-black gold-text mb-6">Rs. 1,500</p>
-                <button onclick="openCheckout('Carbon Shield', 1500)" class="w-full py-4 bg-white text-black rounded-xl font-black text-xs uppercase tracking-widest hover:bg-[#bf953f] transition-all">Buy Now</button>
+                <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-4 font-bold">Ultra-Slim Protection</p>
+                <p class="text-2xl font-black gold-text mb-6 italic">Rs. 1,500</p>
+                <button onclick="openCheckout('Carbon Shield', 1500)" class="w-full py-4 bg-white text-black rounded-xl font-black text-xs uppercase tracking-widest hover:bg-[#bf953f] hover:text-white transition-all">Buy Now</button>
             </div>
 
         </div>
 
-        <div id="checkoutForm" class="hidden mt-20 max-w-2xl mx-auto glass-card p-10 rounded-[3rem] border-[#bf953f]">
+        <div id="checkoutForm" class="hidden mt-20 max-w-2xl mx-auto glass-card p-10 rounded-[3rem] relative">
             <h3 class="text-2xl font-bold text-center gold-text mb-8 italic uppercase tracking-widest">Secure Checkout</h3>
             <form onsubmit="handlePayment(event)" class="space-y-6">
-                <div class="grid grid-cols-2 gap-4">
-                    <input type="text" placeholder="Full Name" required class="w-full p-4 bg-black/20 border border-white/10 rounded-xl focus:border-[#bf953f] outline-none">
-                    <input type="email" placeholder="Email Address" required class="w-full p-4 bg-black/20 border border-white/10 rounded-xl focus:border-[#bf953f] outline-none">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input type="text" placeholder="Full Name" required class="w-full p-4 bg-black/40 border border-white/10 rounded-xl focus:border-[#bf953f] outline-none text-sm">
+                    <input type="email" placeholder="Email Address" required class="w-full p-4 bg-black/40 border border-white/10 rounded-xl focus:border-[#bf953f] outline-none text-sm">
                 </div>
-                <input type="text" placeholder="Card Number (0000 0000 0000 0000)" required class="w-full p-4 bg-black/20 border border-white/10 rounded-xl text-center tracking-[0.2em]">
+                <input type="text" placeholder="Card Number (0000 0000 0000 0000)" required class="w-full p-4 bg-black/40 border border-white/10 rounded-xl text-center tracking-[0.2em] text-sm">
                 <div class="grid grid-cols-2 gap-4">
-                    <input type="text" placeholder="MM/YY" required class="p-4 bg-black/20 border border-white/10 rounded-xl text-center">
-                    <input type="password" placeholder="CVV" required class="p-4 bg-black/20 border border-white/10 rounded-xl text-center">
+                    <input type="text" placeholder="MM/YY" required class="p-4 bg-black/40 border border-white/10 rounded-xl text-center text-sm">
+                    <input type="password" placeholder="CVV" required class="p-4 bg-black/40 border border-white/10 rounded-xl text-center text-sm">
                 </div>
-                <button type="submit" id="payBtn" class="w-full py-5 bg-gradient-to-r from-[#bf953f] to-[#b38728] text-black font-black rounded-2xl uppercase tracking-[0.3em] hover:scale-[1.02] transition-transform">Confirm & Get Ticket</button>
+                <button type="submit" id="payBtn" class="w-full py-5 bg-gradient-to-r from-[#bf953f] to-[#b38728] text-black font-black rounded-2xl uppercase tracking-[0.3em] hover:scale-[1.02] transition-transform text-xs">Confirm Purchase</button>
             </form>
         </div>
     </main>
+
+    <footer class="py-12 text-center text-gray-600 text-[10px] uppercase tracking-widest">
+        &copy; 2026 Elite Luxury Store. All Rights Reserved.
+    </footer>
 
     <script>
         function openCheckout(name, price) {
@@ -96,19 +100,19 @@
         function handlePayment(e) {
             e.preventDefault();
             const btn = document.getElementById('payBtn');
-            btn.innerText = "AUTHORIZING...";
+            btn.innerText = "PROCESSING...";
             btn.disabled = true;
 
             setTimeout(() => {
                 confetti({
-                    particleCount: 150,
-                    spread: 70,
+                    particleCount: 200,
+                    spread: 80,
                     origin: { y: 0.6 },
-                    colors: ['#bf953f', '#ffffff']
+                    colors: ['#bf953f', '#ffffff', '#b38728']
                 });
-                alert("ORDER SUCCESSFUL!\nYour ticket has been registered for the draw.");
+                alert("PAYMENT SUCCESSFUL!\n\nYou are now entered into the Live Draw. Good Luck!");
                 window.location.reload();
-            }, 2000);
+            }, 2500);
         }
     </script>
 </body>
